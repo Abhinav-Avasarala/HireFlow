@@ -497,14 +497,42 @@ Planned environment values:
 
 ```env
 OPENAI_API_KEY=
+OPENAI_MODEL=gpt-5-mini
 FIRECRAWL_API_KEY=
+FIRECRAWL_BASE_URL=https://api.firecrawl.dev
+FIRECRAWL_TIMEOUT_SECONDS=45
 ELEVENLABS_API_KEY=
 ELEVENLABS_VOICE_ID=
 BACKEND_PORT=8000
 FRONTEND_PORT=5173
+VITE_API_BASE_URL=http://localhost:8000
 ```
 
 Additional values can be added later if required.
+
+## Local Setup
+
+### Backend
+
+```bash
+cd backend
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Backend runs at `http://localhost:8000`.
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs at `http://localhost:5173`.
 
 ## Definition of Done
 
